@@ -12,5 +12,16 @@ pip install tqdm
 
 ## Quick Start
 - `python exam_parser`
-    - input: Data/NPExam/*/*.pdf
+    - input: Data/NPExam/ * / *.pdf
     - output: Data/exams/*.json
+
+- `python ans_parser`
+    - input: Data/NPExam/ * / *.pdf
+    - output: Data/ans/*.json
+
+- `python qset_merger.py`
+    - input:
+        - Data/ans/*.json
+        - Data/exams/*.json
+    - output:
+        - Data/NPQSet/ * / *.json

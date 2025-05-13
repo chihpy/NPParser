@@ -6,6 +6,17 @@ import pdfplumber
 import logging
 logging.getLogger("pdfminer").setLevel(logging.ERROR)
 
+def extract_tables_from_pdf(filepath):
+    with pdfplumber.open(filepath) as pdf:
+        tables = []
+        for page in pdf.pages:
+            extracted_tables = page.extract_tables()
+            tables.extend(extracted_tables)
+        if len(tables) == 0:
+            print('no tables found in ' + filepath)
+        else:
+            print(f'{len(tables)} tables found in ' + filepath)
+        return tables
 
 def extract_text_from_pdf_page(filepath, start_page=1, end_page=None):
     doc = fitz.open(filepath)
