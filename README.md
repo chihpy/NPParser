@@ -25,3 +25,7 @@ pip install tqdm
         - Data/exams/*.json
     - output:
         - Data/NPQSet/ * / *.json
+
+## TODO:
+- [ ] figure question
+- [ ] department set
